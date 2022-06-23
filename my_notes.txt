@@ -1,0 +1,78 @@
+Steps of data analysis:
+
+1. Why do we need to use data analysis?
+	-In our situation we need to use data analysis for the purpose of being able to predict a value for any house.
+2. Collect data.
+	-Data we would need are the essentials that affect house prices; in my eyes these would be:
+	-Amount of Bathrooms
+	-Waterfronts
+	-Amount of bedrooms
+	-Square footage
+	-House condition
+	-Floors
+	-A good view
+	-basement size
+	-year built
+	-year renovated
+3.Clean the data.
+	-Standardize Headers
+	-Data Types
+	-Check for duplicats
+	-Null Values
+		-Data.isna().sum()
+		-Data.info()
+	-Checking unique values for cat columns
+	-Make sure that numericals are finite numbers
+4. Analyze the data.
+	-Get scores, make sure there's nothing that stands out.
+	-Make extra models to get a better score
+		-This would include things I didnt include before
+			-Such as lat, long, zipcode
+5. Analyze results.
+
+
+Questions:
+
+Question:
+	How would a model know if a lat, long is a good area or a bad area; as well as zipcode?
+		-Is my method of measuring correlations valid?
+
+Response:
+	Create a model with and without lat, long, and zipcode; With that we will be able to determine if those measures actually make a difference.
+
+
+Question:
+	Why are bedrooms, bathrooms considered categorical?
+(SQL Queries questions)
+
+Response:
+	To some degree they can be, it would be good to make models with them as categorical and another as numerical.
+
+Question:	
+	There is a repeating sell for id 2147483647, is this okay?
+		-Its actually half the dataset, 16079 more specifically.
+(SQL Query in MySQL, specifically #8 for reference)
+
+Response:
+	Had to use bigint when importing data, the repeating number was SQL's int limit.
+
+
+Question:
+	Is making an Age column redundant, and if so would it be better to replace the year_built column with age in years instead?
+
+Response:
+	This is called feature extraction. Delete the column of year_built after making an age column.
+
+
+Question:
+	What is the point of making a readme.md in this situation? And what do readmes usually contain?
+	
+Response:
+	Describe what my repo is about and what it does.
+
+Question:
+	Am I supposed to be getting null values with my calculated field?
+TableAu Problem 7
+
+Response:
+	This was just caused by a lack of an else in my conditionals.
